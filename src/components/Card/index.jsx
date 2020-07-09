@@ -1,6 +1,6 @@
 import React from 'react';
-
 import RBCard from 'react-bootstrap/Card';
+
 import style from './style.css';
 
 export const Card = ({
