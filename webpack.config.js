@@ -5,7 +5,7 @@ module.exports = {
         contentBase: './dist',
         hot: true
     },
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     module: {
         rules: [
             {
