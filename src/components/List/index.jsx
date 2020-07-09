@@ -8,6 +8,7 @@ import { Card } from '../Card';
 import style from './style.css';
 
 export const List = ({
+    disabled,
     items,
     loadMore,
     moreAvailable
@@ -42,7 +43,7 @@ export const List = ({
             </Row>
             {moreAvailable && (
                 <Row>
-                    <Button variant="primary" className={style.button} onClick={loadMore}>
+                    <Button variant="primary" className={style.button} disabled={disabled} onClick={loadMore}>
                         Показать больше
                     </Button>
                 </Row>
