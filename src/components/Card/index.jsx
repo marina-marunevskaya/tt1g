@@ -3,7 +3,7 @@ import RBCard from 'react-bootstrap/Card';
 
 import style from './style.css';
 
-const POSTER_UNAVAILABLE = 'N/A';
+const IMAGE_UNAVAILABLE = 'N/A';
 
 export const Card = ({
     imageAlt,
@@ -11,7 +11,7 @@ export const Card = ({
     title
 }) => (
     <RBCard className={style.card}>
-        {(imageSrc && imageSrc !== POSTER_UNAVAILABLE) && (
+        {(imageSrc && imageSrc !== IMAGE_UNAVAILABLE) && (
             <RBCard.Img
                 variant="top"
                 alt={imageAlt}
