@@ -19,10 +19,13 @@ export const Search = ({
         () => search(value),
         [search, value]
     );
+    const onSubmit = useCallback(
+        (event) => event.preventDefault()
+    );
 
     return (
         <Container>
-            <Form className={style.form}>
+            <Form className={style.form} onSubmit={onSubmit}>
                 <Form.Group controlId="searchField">
                     <Form.Row>
                         <Col>
