@@ -10,15 +10,13 @@ export const App = () => {
     const [items, setItems] = useState([]);
     const [totalAmount, setTotalAmount] = useState(0);
 
-    const [value, setValue] = useState('');
-
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [searchValue, setSearchValue] = useState('');
 
     const [error, setError] = useState(false);
 
-    const search = () => {
+    const search = (value) => {
         if (value.length >= 2) {
             setLoading(true);
             apiSearch({
@@ -65,7 +63,7 @@ export const App = () => {
 
     return (
         <Fragment>
-            <Search disabled={loading} onChange={setValue} onClick={search} value={value} />
+            <Search disabled={loading} search={search}/>
             {error && (
                 <Container>
                     <Alert variant="danger">Произошла ошибка!</Alert>
