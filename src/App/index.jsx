@@ -25,12 +25,17 @@ export const App = () => {
             })
                 .then(
                     (response) => {
-                        setItems(response.data.Search);
-                        setTotalAmount(response.data.totalResults);
-                        setPage(1);
-                        setSearchValue(value);
+                        if (response.data.Response === 'True') {
+                            setItems(response.data.Search);
+                            setTotalAmount(response.data.totalResults);
+                            setPage(1);
+                            setSearchValue(value);
+                            setError(false);
+                        } else {
+                            setError(true);
+                        }
+
                         setLoading(false);
-                        setError(false);
                     }
                 )
                 .catch(
